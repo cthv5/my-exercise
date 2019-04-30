@@ -1,4 +1,4 @@
-package org.cth.algorithm;
+package org.cth.dsaa;
 
 public class Position {
     int row;

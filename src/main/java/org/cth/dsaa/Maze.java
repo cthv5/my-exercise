@@ -1,4 +1,4 @@
-package org.cth.algorithm;
+package org.cth.dsaa;
 
 import java.util.Scanner;
 import java.util.Stack;

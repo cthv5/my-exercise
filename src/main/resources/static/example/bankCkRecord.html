@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>银行流水自助查询</title>
+<style>
+.thead th {
+	text-align: center;
+}
+</style>
+<script src="files/jquery-3.3.1.min.js"></script>
+<script src="files/bootstrap/bootstrap.js"></script>
+<link href="files/bootstrap/bootstrap.css" rel="stylesheet" />
+<script src="files/bootstrap/bootstrap-paginator.js"></script>
+<link href="files/bootstrap/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" />
+<script src="files/bootstrap/bootstrap-datetimepicker.min.js"></script>
+<script src="files/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/bankCkRecord.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="page-header">
+			<h1>
+				自动核销自助查询 <small>银行流水</small>
+			</h1>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="bank-log">
+			<div class="panel panel-default">
+				<div class="panel-heading">查询条件</div>
+				<div class="panel-body form-group" style="margin-bottom: 0px;">
+					<label class="col-sm-1 control-label"
+						style="text-align: right; margin-top: 5px">数据类型：</label>
+					<div class="col-sm-2">
+						<select class="form-control" id="search_check" onchange="btnChange(this[selectedIndex].value);">
+							<option value="AbcErp" selected="selected">ERP农行</option>
+							<option value="HxErp">ERP华夏</option>
+							<option value="XYCheck">型云农行</option>
+						</select>
+					</div>
+					<label class="col-sm-1 control-label"
+						style="text-align: right; margin-top: 5px">开始日期：</label>
+					<div class="col-sm-2 date form_date mr10">
+						<input class="form-control" type="text" value="" id="startDate">
+					</div>
+					<label class="col-sm-1 control-label"
+						style="text-align: right; margin-top: 5px">结束日期：</label>
+					<div class="col-sm-2 date form_date">
+						<input class="form-control" type="text" value="" id="endDate">
+					</div>
+					<label class="col-sm-1 control-label"
+						style="text-align: right; margin-top: 5px">对方账号：</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" name="Name"
+							id="search_acctNo" />
+					</div>
+					<label class="col-sm-1 control-label"
+                           style="text-align: right; margin-top: 10px;">对方公司名：</label>
+					<div class="col-sm-2" style="margin-top:5px">
+						<input type="text" class="form-control" name="Name"
+							id="search_oppName" />
+					</div>
+                    <label class="col-sm-1 control-label"
+                           style="text-align: right; margin-top: 10px;">交易金额：</label>
+                    <div class="col-sm-2" style="margin-top:5px">
+                        <input type="text" class="form-control" name="Name"
+                               id="search_amount" />
+                    </div>
+                    <label class="col-sm-1 control-label" id="label_acctName"
+                           style="text-align: right; margin-top: 10px;">收款公司名：</label>
+                    <div class="col-sm-2" id="div_acctName" style="margin-top:5px">
+                        <select class="form-control" id="search_acctName">
+                            <option>--</option>
+                            <option>江苏智恒达机械科技有限公司</option>
+                            <option>江苏岳洋通金属加工有限公司</option>
+                            <option>江苏智恒达型云网络科技有限公司</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-1 control-label" id="label_zhdNo"
+                           style="text-align: right; margin-top: 10px;">收款账号：</label>
+                    <div class="col-sm-2" id="div_zhdNo" style="margin-top:5px">
+                        <input type="text" class="form-control" name="Name"
+                               id="search_zhdNo" />
+                    </div>
+					<div class="col-sm-1 col-sm-offset-1" style="margin-top:5px">
+						<button class="btn btn-primary" id="btn_query">查询</button>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading">银行数据记录</div>
+				<div class="panel-body">
+					<!--<div class="table-responsive"> -->
+					<table class="table table-bordered table-striped"
+						style="word-break: break-all; word-wrap: break-all;">
+						<thead>
+
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+					<!--</div> -->
+				</div>
+				<div class="col-lg-12" align="center">
+					<!-- 分页控件，标签必须是<ul> -->
+					<ul id="pageButton"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
