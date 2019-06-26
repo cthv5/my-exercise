@@ -36,7 +36,7 @@ dependencies {
     compile("com.soecode.wx-tools:wx-tools:2.1.4-RELEASE")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     // fast json
-    compile('com.alibaba:fastjson:1.2.5')
+    compile('com.alibaba:fastjson:1.2.31')
     // kotlin
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
